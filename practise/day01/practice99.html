@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <style>
+        div{
+            width: 50%;
+            background-color: aquamarine;
+            margin: 30px;
+            padding: 30px;
+        }
+        input{
+            width: 100%;
+            border-radius: 10px;
+            margin: 10px 0;
+            padding: 10px;
+        }
+        button{
+            border-radius: 10px;
+            padding: 5px;
+            width: 100px;
+        }
+        .ilk{
+            background-color: blue;
+            color: white;
+            border: none;
+        }
+        .ilk:hover{
+            background-color: rgb(176, 187, 193);
+            color: blue;
+        }
+        .iki{
+            background-color: red;
+            color: white;
+            border: none;
+        }
+        .iki:hover{
+            background-color: rgb(176, 187, 193);
+            color: red;
+        }
+        .sonuc{
+            background-color: bisque;
+            display: inline-block;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+    <form action="">
+        <label for="isim">Isim</label>
+        <input type="text" id="isim">
+        <label for="soyad">Soyisim</label>
+        <input type="text" id="soyad">
+        <button class="ilk" onclick="gonder()">Gonder</button>
+        <button class="iki" onclick="sil()" type="reset">Sil</button>
+    </form>
+    <h2></h2>
+</div>
+<script src="js/js99.js"></script>
+</body>
+</html>
