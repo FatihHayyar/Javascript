@@ -22,7 +22,7 @@ btnAverage.addEventListener("click", ()=>{
 
 
 const isScoreValid = (score) => { 
-    return (score || score === 0) && !isNaN(score) && score<=100 && score>=0;
+    return score && !isNaN(score) && score<=100 && score>=0;
 }
 
 const getAverage = (num1, num2, num3) => { 
