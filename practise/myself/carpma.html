@@ -10,19 +10,30 @@
     integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous" />
 
 </head>
-<body class="m-5">
-    <div id="ilk">
-    <input type="text" id="isim" placeholder="Adinizi yazin" class="p-1 m-2"> <button class="btn btn-danger" id="giris">Devam Et</button></div>
-    <h1 class="text-center m-5 d-none">Hos Geldin </h1>
-    <div class="text-center d-none"id="basla">
-    <button class="btn btn-dark" id="bsla">Oyuna Basla</button></div>
-    <div class="container m-5 d-none" >
-    <input type="number" id="firstNumber" disabled>
-    <span id="islem"></span>
-    <input type="number" id="secondNumber" disabled>
-    <span >=</span>
-    <input type="number" id="secondNumber">
-    <button class="btn btn-primary">Kontrol</button>
+<body class="text-center p-2">
+    <div id="ilk" class="text-center d-flex flex-column p-2">
+    <input type="text" id="isim" placeholder="Adinizi yazin" class="p-1 m-2 border-0 text-center"> <button class="btn btn-danger" id="giris">Devam Et</button></div>
+    <div id="iki" class="text-center d-none">
+    <h1 class="text-center m-5">Hos Geldin </h1>
+    <button class="btn btn-dark" id="basla">Oyuna Basla</button></div>
+    <div class="container d-none" id="container">
+        <h2 class="text-center">Matematik oyununa hosgeldin</h2>
+        <h3 class="text-center">Hazir oldugunda <br> <button class="btn btn-info m-2" id="beginn">Beginn</button> <br> e bas</h3>
+    <div id="basliyoruz">
+    <div id="butons" class="d-lg-inline-block">
+    <input type="number" id="firstNumber" class="text-center fs-2 fw-bold" disabled>
+    <br>
+    <span id="islem" class="fs-4"></span>
+    <br>
+    <input type="number" id="secondNumber" class="text-center fs-2 fw-bold" disabled>
+    <br>
+    <span class="fs-4">=</span>
+    <br>
+    <input type="number" id="sonuc" class="text-center fs-2 fw-bold">
+    <br>
+    <button class="btn btn-primary m-2" id="weiter">sonuc</button>
+</div>
+    <button class="btn btn-primary" id="devam">devam</button>
     <br>
     <label for="">Dogru Sayisi :</label> <span id="dogruSayisi"></span>
     <br>
@@ -30,6 +41,10 @@
     <span id="yanlisSayisi"></span>
 
     </div>
+    
+</div>
+<p class="text-center fs-4 fw-bold mt-3" id="bitti"></p>
+<button class="btn btn-success d-none" id="tekrar">Tekrar</button>
     <script src="carpma.js"></script>
 </body>
-</html>
+</html> 
