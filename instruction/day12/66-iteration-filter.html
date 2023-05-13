@@ -25,10 +25,16 @@
             {id: 10, name: 'speaker', price: 150},
         ];
 
-        const filteredProducts = products.filter( (product) =>  product.name.startsWith("h") );
 
-        console.log(newProducts);
-        console.log(filteredProducts);
+        const filterArray = (c) => {
+            const filteredProducts = products.filter( (product) => product.name.startsWith(c) );
+            return filteredProducts;
+        }
+
+        
+
+        console.log(filterArray("m"));
+        console.log(filterArray("h"));
 
 
 
