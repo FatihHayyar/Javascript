@@ -22,7 +22,7 @@ const loadData = () => {
     let html = "";
     students.forEach( (student, i)=>{
         html += `
-            <tr>
+            <tr class="data-row">
                 <td>${i+1}</td>
                 <td>${student.name}</td>
                 <td>${student.point}</td>    
@@ -35,6 +35,7 @@ const loadData = () => {
 }
 
 document.getElementById("tblStudents").addEventListener("click", (e)=>{
+
     if(e.target.classList.contains("btn-del")){
         const name = e.target.closest("tr").children[1].innerText;
         
@@ -42,6 +43,9 @@ document.getElementById("tblStudents").addEventListener("click", (e)=>{
         if(result){
             //...
         }
+    }
+    else if(e.target.closest("tr").classList.contains("data-row")){
+        e.target.closest("tr").classList.toggle("table-info");
     }
 })
 
