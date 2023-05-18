@@ -7,8 +7,8 @@ setInterval(() => {
     const hour = dateTime.getHours();
     const minute = dateTime.getMinutes();
 
-    hourEl.innerHTML = hour.length===1 ? `0${hour}` : hour;
-    minuteEl.innerHTML = minute.length===1 ? `0${minute}` : minute;
+    hourEl.innerHTML = hour.toString().length===1 ? `0${hour}` : hour;
+    minuteEl.innerHTML = minute.toString().length===1 ? `0${minute}` : minute;
 
     secondEl.classList.toggle("hidden");
     
