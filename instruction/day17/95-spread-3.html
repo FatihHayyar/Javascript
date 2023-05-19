@@ -10,6 +10,7 @@
     
 
     <script>
+        "use strict";
         const person = {
             firstName : "Ali",
             lastName: "Gel",
@@ -28,6 +29,12 @@
         p2.firstName = "Ayşe";
         console.log(person);
         console.log(p2);
+
+
+
+        const p3 = { ...person, age: 13, firstName: "Serkan" };
+        delete p3.salary; // nesnedeki field ı silmek için 
+        console.log(p3);
 
 
 
