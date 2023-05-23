@@ -1,30 +1,42 @@
-import { searchShows } from "./tvmaze-api.js";
-let timeoutSearch = null;
+import { getShowDetails, searchShows } from "./tvmaze-api.js";
+const lstTvShows = document.getElementById("lstTvShows");
 
-document.getElementById("txtSearch").addEventListener("input", (e) => {
-  const query = e.target.value;
+document.getElementById("ara").addEventListener("click", () => {
+  const query = document.getElementById("txtSearch").value;
 
-  if (timeoutSearch) clearTimeout(timeoutSearch);
-  timeoutSearch = setTimeout(() => {
+  
     searchShows(query, (shows) => {
       createMovies(shows);
-    });
-  }, 500);
+      
+    
+  });
+  document.getElementById("txtSearch").focus();
+
+});
+
+document.getElementById("txtSearch").addEventListener("keyup", (event) => {
+  const query = document.getElementById("txtSearch").value;
+  if (event.key === "Enter") {
+    searchShows(query, (shows) => {
+      createMovies(shows);
+    
+  });
+  }
 });
 
 const createMovies = (shows) => {
-  const lstTvShows = document.getElementById("lstTvShows");
+ 
 
   lstTvShows.innerHTML = "";
   shows.forEach((item) => {
-    if (!item.show.genres) console.log(item);
+    
     const movieCard = createMovieCard(item);
     lstTvShows.insertAdjacentHTML("afterbegin", movieCard);
   });
 };
 
 const createMovieCard = (item) => {
-  const { image, name, genres } = item.show;
+  const {id,image, name, genres } = item.show;
 
   let movieImage = "img/noimage.png";
   if (image) {
@@ -33,7 +45,7 @@ const createMovieCard = (item) => {
 
   return `
     <div class="col">
-        <div class="card h-100">
+        <div class="card h-100" data-show=${id}>
         <img src=${movieImage} class="card-img-top" alt="${name}" />
         <div class="card-body">
             <h5 class="card-title">${name}</h5>
@@ -42,3 +54,13 @@ const createMovieCard = (item) => {
         </div>
     </div>`;
 };
+
+lstTvShows.addEventListener("click",(e)=>{
+  let resim=e.target.closest(".card");
+  let showId=resim.dataset.show;
+  location.href = `107-tvshow-details.html?id=${showId}`;
+  console.log(resim)
+  console.log(showId)
+  
+  
+})
