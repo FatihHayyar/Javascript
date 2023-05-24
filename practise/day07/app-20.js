@@ -14,6 +14,7 @@ btnKaydetEl.addEventListener("click", () => {
 
         if (!userArray.includes(numberEl.value)) {
             userArray.push(numberEl.value);
+            numberEl.value="";
             userArray.sort((a, b) => a - b);
             displayNumbersEl.innerHTML = userArray;
             if (userArray.length < 6) {
